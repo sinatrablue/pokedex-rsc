@@ -1,3 +1,4 @@
+import { Card, CardHeader, CardTitle } from "~/components/ui";
 import type { RootQuery } from "~/types";
 
 export const PokedexPreview = async () => {
@@ -8,7 +9,11 @@ export const PokedexPreview = async () => {
   return (
     <div className="grid grid-cols-4 gap-6">
       {pokemons.map((pkm) => (
-        <div key={pkm.name}>{pkm.name}</div>
+        <Card key={pkm.name}>
+          <CardHeader>
+            <CardTitle>{pkm.name}</CardTitle>
+          </CardHeader>
+        </Card>
       ))}
     </div>
   );
