@@ -3,7 +3,7 @@ export type RootQuery = {
   results: RootQueryResult[];
 };
 
-type RootQueryResult = {
+export type RootQueryResult = {
   name: string;
   url: string;
 };
