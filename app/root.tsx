@@ -6,6 +6,8 @@ import {
   ScrollRestoration,
 } from "react-router";
 
+import { SkeletonTheme } from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 import { NavigationMenu } from "~/components";
 import type { Route } from "./+types/root";
 import "./app.css";
@@ -29,7 +31,15 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  return <Outlet />;
+  return (
+    <SkeletonTheme
+      enableAnimation
+      baseColor="oklch(0.278 0.033 256.848)" // muted
+      highlightColor="oklch(0.707 0.022 261.325 / 30%)" // muted-foreground 30%
+    >
+      <Outlet />
+    </SkeletonTheme>
+  );
 }
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
