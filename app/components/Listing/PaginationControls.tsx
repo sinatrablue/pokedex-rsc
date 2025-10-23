@@ -22,12 +22,12 @@ export const PaginationControls: FC<PaginationControlsProps> = ({
   return (
     <div className="flex items-center gap-12 self-center">
       <Button
-        variant="outline"
+        variant="ghost"
         size="xs"
         onClick={() => handlePageChange(page - 1)}
         disabled={page === 1}
       >
-        Précédent
+        Previous
       </Button>
 
       <span>
@@ -35,12 +35,12 @@ export const PaginationControls: FC<PaginationControlsProps> = ({
       </span>
 
       <Button
-        variant="outline"
+        variant="ghost"
         size="xs"
         onClick={() => handlePageChange(page + 1)}
         disabled={page === totalPages}
       >
-        Suivant
+        Next
       </Button>
     </div>
   );

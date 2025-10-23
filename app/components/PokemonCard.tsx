@@ -59,9 +59,9 @@ export const PokemonCard: FC<PokemonCardProps> = ({ url }) => {
       </div>
       <CardFooter>
         {pokemon ? (
-          <img width={56} src={pokemon.sprites.front_default ?? undefined} />
+          <img width={64} src={pokemon.sprites.front_default ?? undefined} />
         ) : (
-          <Skeleton circle width={56} height={56} />
+          <Skeleton circle width={64} height={64} />
         )}
       </CardFooter>
     </Card>

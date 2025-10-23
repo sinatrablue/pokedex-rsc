@@ -12,10 +12,10 @@ export function meta({}: Route.MetaArgs) {
 
 export function ServerComponent() {
   return (
-    <div className="flex flex-col gap-10 pt-24">
+    <div className="flex flex-col gap-10 py-12">
       <HomeHero />
 
-      <div className="flex flex-col gap-10 px-12">
+      <div className="flex flex-col gap-10 px-36">
         Random preview within the whole Pokedex :
         <PokedexPreview />
         <Link className="self-center" to="/listing">
