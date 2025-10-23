@@ -15,6 +15,7 @@ export const PaginationControls: FC<PaginationControlsProps> = ({
   const totalPages = Math.ceil(totalCount / POKEMONS_PER_PAGE);
 
   const handlePageChange = (newPage: number) => {
+    scroll(0, 0);
     navigate(`?page=${newPage}`);
   };
 
