@@ -10,7 +10,7 @@ export const PokemonsListing: FC<PokemonsListingProps> = ({ pokemons }) => {
   return (
     <div className="grid grid-cols-4 gap-6">
       {pokemons.map((pkm) => (
-        <PokemonCard key={pkm.name} name={pkm.name} url={pkm.url} />
+        <PokemonCard key={pkm.name} url={pkm.url} />
       ))}
     </div>
   );
