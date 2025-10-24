@@ -1,22 +1,23 @@
 "use client";
 import type { FC } from "react";
-import { useNavigate } from "react-router";
+import { useSearchParams } from "react-router";
 import { Button } from "~/components/ui";
 import { POKEMONS_PER_PAGE } from "~/constants";
 
-type PaginationControlsProps = { page: number; totalCount: number };
+type PaginationControlsProps = { totalCount: number };
 
 export const PaginationControls: FC<PaginationControlsProps> = ({
-  page,
   totalCount,
 }) => {
-  const navigate = useNavigate();
+  const [searchParams, setSearchParams] = useSearchParams();
+  const pageParam = searchParams.get("page");
 
+  const page = pageParam ? parseInt(pageParam) : 1;
   const totalPages = Math.ceil(totalCount / POKEMONS_PER_PAGE);
 
   const handlePageChange = (newPage: number) => {
-    scroll(0, 0);
-    navigate(`?page=${newPage}`);
+    setSearchParams({ page: newPage.toString() });
+    scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (

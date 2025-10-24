@@ -17,7 +17,6 @@ export async function loader({ request }: LoaderFunctionArgs) {
   return {
     pokemons,
     totalCount,
-    page,
   };
 }
 
@@ -34,10 +33,7 @@ export function ServerComponent({ loaderData }: Route.ComponentProps) {
       <h1>Pokemons listing</h1>
       Filters
       <PokemonsListing pokemons={loaderData.pokemons} />
-      <PaginationControls
-        page={loaderData.page}
-        totalCount={loaderData.totalCount}
-      />
+      <PaginationControls totalCount={loaderData.totalCount} />
     </div>
   );
 }
