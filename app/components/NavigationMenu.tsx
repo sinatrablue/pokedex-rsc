@@ -6,8 +6,8 @@ export const NavigationMenu = () => {
       label: "Home",
       to: "/",
     },
-    { label: "Listing", to: "/listing" },
-    { label: "Search", to: "/search" },
+    { label: "Listing", to: "/pokemons" },
+    // { label: "Search", to: "/search" },
   ];
 
   return (

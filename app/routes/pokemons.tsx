@@ -1,6 +1,6 @@
-import type { Route } from ".react-router/types/app/routes/+types/listing";
+import type { Route } from ".react-router/types/app/routes/+types/pokemons";
 import type { LoaderFunctionArgs } from "react-router";
-import { PaginationControls, PokemonsListing } from "~/components/Listing";
+import { PaginationControls, PokemonsListing } from "~/components/pokemons";
 import { POKEMONS_PER_PAGE } from "~/constants";
 import type { RootQuery } from "~/types";
 
@@ -29,11 +29,11 @@ export function meta({}: Route.MetaArgs) {
 
 export function ServerComponent({ loaderData }: Route.ComponentProps) {
   return (
-    <div className="flex flex-col gap-10 px-24 py-12">
+    <>
       <h1>Pokemons listing</h1>
       Filters
       <PokemonsListing pokemons={loaderData.pokemons} />
       <PaginationControls totalCount={loaderData.totalCount} />
-    </div>
+    </>
   );
 }

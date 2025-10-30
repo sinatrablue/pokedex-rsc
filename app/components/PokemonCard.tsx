@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState, type FC } from "react";
 import Skeleton from "react-loading-skeleton";
+import { Link } from "react-router";
 import {
   Badge,
   Card,
@@ -28,42 +29,44 @@ export const PokemonCard: FC<PokemonCardProps> = ({ url }) => {
   }, [url]);
 
   return (
-    <Card className="flex flex-row justify-between">
-      <div className="flex flex-2 flex-col">
-        <CardHeader>
-          <CardTitle>
-            {pokemon?.name ?? (
-              <Skeleton containerClassName="flex-1" width={128} />
-            )}
-          </CardTitle>
-          <CardDescription>
+    <Link to={`/pokemons/${pokemon?.id}`}>
+      <Card className="flex flex-row justify-between">
+        <div className="flex flex-2 flex-col">
+          <CardHeader>
+            <CardTitle>
+              {pokemon?.name ?? (
+                <Skeleton containerClassName="flex-1" width={128} />
+              )}
+            </CardTitle>
+            <CardDescription>
+              {pokemon ? (
+                `Pokedex #${pokemon.order}`
+              ) : (
+                <Skeleton containerClassName="flex-1" width={96} />
+              )}
+            </CardDescription>
+          </CardHeader>
+          <CardPanel className="space-x-2">
             {pokemon ? (
-              `Pokedex #${pokemon.order}`
+              pokemon.types.map(({ type }) => <Badge>{type.name}</Badge>)
             ) : (
-              <Skeleton containerClassName="flex-1" width={96} />
+              <Skeleton
+                count={2}
+                inline
+                containerClassName="flex-1 space-x-2"
+                width={48}
+              />
             )}
-          </CardDescription>
-        </CardHeader>
-        <CardPanel className="space-x-2">
+          </CardPanel>
+        </div>
+        <CardFooter>
           {pokemon ? (
-            pokemon.types.map(({ type }) => <Badge>{type.name}</Badge>)
+            <img width={64} src={pokemon.sprites.front_default ?? undefined} />
           ) : (
-            <Skeleton
-              count={2}
-              inline
-              containerClassName="flex-1 space-x-2"
-              width={48}
-            />
+            <Skeleton circle width={64} height={64} />
           )}
-        </CardPanel>
-      </div>
-      <CardFooter>
-        {pokemon ? (
-          <img width={64} src={pokemon.sprites.front_default ?? undefined} />
-        ) : (
-          <Skeleton circle width={64} height={64} />
-        )}
-      </CardFooter>
-    </Card>
+        </CardFooter>
+      </Card>
+    </Link>
   );
 };
