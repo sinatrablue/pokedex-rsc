@@ -20,7 +20,7 @@ export const AbilitiesAccordion: FC<AbilitiesAccordionProps> = ({
   return (
     <Accordion className="w-3xl self-center">
       {abilities.map((ability) => (
-        <AccordionItem value={ability.slot} key={ability.slot}>
+        <AccordionItem value={ability.ability.url} key={ability.ability.url}>
           <AccordionTrigger disabled={ability.is_hidden}>
             <div className="flex gap-3">
               {ability.ability.name}
