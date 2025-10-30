@@ -16,7 +16,7 @@ export const NavigationMenu = () => {
         <Link
           key={link.to}
           to={link.to}
-          className="text-sm leading-3 tracking-wider uppercase hover:cursor-pointer hover:text-neutral-300"
+          className="hover:text-primary/80 text-sm leading-3 tracking-wider uppercase"
         >
           {link.label}
         </Link>

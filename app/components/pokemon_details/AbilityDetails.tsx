@@ -1,8 +1,9 @@
 "use client";
-import { LucideSquareArrowOutUpRight, Tv } from "lucide-react";
+import { Tv } from "lucide-react";
 import { useEffect, useState, type FC } from "react";
 import { fetchAbility } from "~/actions";
-import { Badge, Button } from "~/components/ui";
+import { SeeOtherPokemonsModal } from "~/components/pokemon_details";
+import { Badge } from "~/components/ui";
 import { formatGeneration } from "~/lib/utils";
 import type { AbilityQuery } from "~/types";
 
@@ -27,10 +28,10 @@ export const AbilityDetails: FC<AbilityDetailsProps> = ({ url }) => {
           <h3 className="capitalize">{ability?.name}</h3>
         </div>
         {ability && ability.pokemon.length > 0 && (
-          <Button variant="secondary" className="w-fit">
-            See other pokemons learning it
-            <LucideSquareArrowOutUpRight />
-          </Button>
+          <SeeOtherPokemonsModal
+            abilityName={ability.name}
+            pokemons={ability.pokemon}
+          />
         )}
       </div>
 

@@ -24,8 +24,8 @@ export type PokemonQuery = {
   abilities: Abilities;
 };
 
-type PokemonRelated = EntityBase & BasicProps;
-type PokemonsRelated = PokemonRelated[];
+type PokemonRelated = EntityBase & { pokemon: BasicProps };
+export type PokemonsRelated = PokemonRelated[];
 
 export type AbilityQuery = {
   id: number;

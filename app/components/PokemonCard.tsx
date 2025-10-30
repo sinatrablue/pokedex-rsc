@@ -33,7 +33,7 @@ export const PokemonCard: FC<PokemonCardProps> = ({ url }) => {
       <Card className="flex flex-row justify-between">
         <div className="flex flex-2 flex-col">
           <CardHeader>
-            <CardTitle>
+            <CardTitle className="line-clamp-1">
               {pokemon?.name ?? (
                 <Skeleton containerClassName="flex-1" width={128} />
               )}
