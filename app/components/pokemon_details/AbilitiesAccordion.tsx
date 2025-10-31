@@ -18,7 +18,7 @@ export const AbilitiesAccordion: FC<AbilitiesAccordionProps> = ({
   abilities,
 }) => {
   return (
-    <Accordion className="w-3xl self-center">
+    <Accordion>
       {abilities.map((ability) => (
         <AccordionItem value={ability.ability.url} key={ability.ability.url}>
           <AccordionTrigger disabled={ability.is_hidden}>
