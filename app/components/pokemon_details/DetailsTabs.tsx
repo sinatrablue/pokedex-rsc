@@ -11,7 +11,7 @@ interface DetailsTabsProps {
 export const DetailsTabs: FC<DetailsTabsProps> = ({ pokemon }) => {
   return (
     <Tabs defaultValue="abilities">
-      <TabsList className="w-1/2">
+      <TabsList className="w-1/3 self-center">
         <TabsTab value="abilities">Abilities</TabsTab>
         <TabsTab value="moves">Moves</TabsTab>
       </TabsList>

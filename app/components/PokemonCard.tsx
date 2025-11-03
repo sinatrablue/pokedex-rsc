@@ -48,7 +48,9 @@ export const PokemonCard: FC<PokemonCardProps> = ({ url }) => {
           </CardHeader>
           <CardPanel className="space-x-2">
             {pokemon ? (
-              pokemon.types.map(({ type }) => <Badge>{type.name}</Badge>)
+              pokemon.types.map(({ type }) => (
+                <Badge variant="secondary">{type.name}</Badge>
+              ))
             ) : (
               <Skeleton
                 count={2}
