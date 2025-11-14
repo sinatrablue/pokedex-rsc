@@ -6,3 +6,12 @@ export type NamesLocalized = {
   name: string;
   language: Language;
 }[];
+
+export type FlavourTextsLocalized = {
+  flavour_text: string;
+  language: Language;
+  /**
+   * can be ignored
+   */
+  version_group: BasicProps;
+};

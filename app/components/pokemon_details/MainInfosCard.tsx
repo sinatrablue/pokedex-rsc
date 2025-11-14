@@ -15,7 +15,7 @@ type MainInfosCardProps = {
 
 export const MainInfosCard: FC<MainInfosCardProps> = ({ pokemon }) => {
   return (
-    <Card className="flex flex-row-reverse justify-between p-24">
+    <Card className="flex w-4xl flex-row-reverse justify-between p-24">
       <div className="flex flex-2 flex-col">
         <CardHeader className="gap-8">
           <CardTitle className="flex flex-col">

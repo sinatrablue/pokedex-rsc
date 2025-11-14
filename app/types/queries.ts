@@ -3,6 +3,8 @@ import type {
   BasicProps,
   EffectEntries,
   EntityBase,
+  FlavourTextsLocalized,
+  Moves,
   NamesLocalized,
   Sprites,
   Types,
@@ -22,6 +24,7 @@ export type PokemonQuery = {
   sprites: Sprites;
   types: Types;
   abilities: Abilities;
+  moves: Moves;
 };
 
 type PokemonRelated = EntityBase & { pokemon: BasicProps };
@@ -35,4 +38,21 @@ export type AbilityQuery = {
   names: NamesLocalized;
   effect_entries: EffectEntries;
   pokemon: PokemonsRelated;
+};
+
+export type MoveQuery = {
+  id: number;
+  name: string;
+  accuracy: number;
+  effect_change: number | null;
+  pp: number;
+  priority: number;
+  power: number;
+  damage_class: BasicProps;
+  effect_entries: EffectEntries;
+  generation: BasicProps;
+  names: NamesLocalized;
+  type: BasicProps;
+  learned_by_pokemon: BasicProps[];
+  flavor_text_entries: FlavourTextsLocalized[];
 };

@@ -5,4 +5,5 @@ export * from "./card";
 export * from "./dialog";
 export * from "./frame";
 export * from "./scroll-area";
+export * from "./table";
 export * from "./tabs";

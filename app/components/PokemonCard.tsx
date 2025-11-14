@@ -33,7 +33,7 @@ export const PokemonCard: FC<PokemonCardProps> = ({ url }) => {
       <Card className="flex flex-row justify-between">
         <div className="flex flex-2 flex-col">
           <CardHeader>
-            <CardTitle className="line-clamp-1">
+            <CardTitle className="line-clamp-1 min-h-fit">
               {pokemon?.name ?? (
                 <Skeleton containerClassName="flex-1" width={128} />
               )}
@@ -49,7 +49,9 @@ export const PokemonCard: FC<PokemonCardProps> = ({ url }) => {
           <CardPanel className="space-x-2">
             {pokemon ? (
               pokemon.types.map(({ type }) => (
-                <Badge variant="secondary">{type.name}</Badge>
+                <Badge key={type.name} variant="secondary">
+                  {type.name}
+                </Badge>
               ))
             ) : (
               <Skeleton

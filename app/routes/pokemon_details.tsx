@@ -18,7 +18,7 @@ export async function ServerComponent({ params }: Route.ComponentProps) {
   return (
     <>
       <Back />
-      <div className="flex w-4xl flex-col gap-10 self-center">
+      <div className="flex flex-col items-center gap-10 self-center">
         <MainInfosCard pokemon={pokemon} />
         <DetailsTabs pokemon={pokemon} />
       </div>

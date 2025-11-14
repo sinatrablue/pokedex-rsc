@@ -1,6 +1,6 @@
 "use client";
-import type { FC } from "react";
-import { AbilitiesAccordion } from "~/components/pokemon_details/AbilitiesAccordion";
+import { type FC } from "react";
+import { AbilitiesAccordion, MovesTable } from "~/components/pokemon_details";
 import {
   Frame,
   FrameDescription,
@@ -20,7 +20,7 @@ interface DetailsTabsProps {
 
 export const DetailsTabs: FC<DetailsTabsProps> = ({ pokemon }) => {
   return (
-    <Tabs defaultValue="abilities">
+    <Tabs defaultValue="abilities" className="w-5xl">
       <TabsList className="w-1/3 self-center">
         <TabsTab value="abilities">Abilities</TabsTab>
         <TabsTab value="moves">Moves</TabsTab>
@@ -60,7 +60,9 @@ export const DetailsTabs: FC<DetailsTabsProps> = ({ pokemon }) => {
               obstacles or exploring new areas.
             </FrameDescription>
           </FrameHeader>
-          <FramePanel>TODO moves table</FramePanel>
+          <FramePanel>
+            <MovesTable moves={pokemon.moves} />
+          </FramePanel>
         </Frame>
       </TabsPanel>
     </Tabs>
