@@ -19,7 +19,7 @@ export const MainInfosCard: FC<MainInfosCardProps> = ({ pokemon }) => {
       <div className="flex flex-2 flex-col">
         <CardHeader className="gap-8">
           <CardTitle className="flex flex-col">
-            <h1 className="text-gray-100/70">#{pokemon.order}</h1>
+            <h1 className="text-ring">#{pokemon.order}</h1>
             <h1 className="!tracking-normal">{pokemon.name}</h1>
           </CardTitle>
           <CardDescription className="flex gap-4">

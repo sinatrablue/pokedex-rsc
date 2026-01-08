@@ -11,8 +11,10 @@ import "react-loading-skeleton/dist/skeleton.css";
 import { NavigationMenu } from "~/components";
 import type { Route } from "./+types/root";
 import "./app.css";
+import { useThemeStore } from "./stores";
 
 export function Layout({ children }: { children: React.ReactNode }) {
+  const { isDark } = useThemeStore();
   return (
     <html lang="en">
       <head>
@@ -21,7 +23,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body className="dark">
+      <body className={isDark ? "dark" : undefined}>
         <NavigationMenu />
         {children}
         <ScrollRestoration />
