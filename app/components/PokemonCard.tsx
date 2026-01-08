@@ -11,7 +11,7 @@ import {
   CardPanel,
   CardTitle,
 } from "~/components/ui";
-import type { PokemonQuery } from "~/types";
+import type { PokemonQuery, TypeLiteral } from "~/types";
 
 interface PokemonCardProps {
   url: string;
@@ -49,7 +49,7 @@ export const PokemonCard: FC<PokemonCardProps> = ({ url }) => {
           <CardPanel className="space-x-2">
             {pokemon ? (
               pokemon.types.map(({ type }) => (
-                <Badge key={type.name} variant="secondary">
+                <Badge key={type.name} variant={type.name as TypeLiteral}>
                   {type.name}
                 </Badge>
               ))

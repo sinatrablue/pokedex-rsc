@@ -7,7 +7,7 @@ import {
   CardPanel,
   CardTitle,
 } from "~/components/ui";
-import type { PokemonQuery } from "~/types";
+import type { PokemonQuery, TypeLiteral } from "~/types";
 
 type MainInfosCardProps = {
   pokemon: PokemonQuery;
@@ -24,7 +24,11 @@ export const MainInfosCard: FC<MainInfosCardProps> = ({ pokemon }) => {
           </CardTitle>
           <CardDescription className="flex gap-4">
             {pokemon.types.map((type) => (
-              <Badge key={type.slot} className="rounded-2xl px-6 py-2 text-3xl">
+              <Badge
+                key={type.slot}
+                variant={type.type.name as TypeLiteral}
+                className="rounded-2xl border-2 px-6 py-2 text-3xl"
+              >
                 {type.type.name}
               </Badge>
             ))}

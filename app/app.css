@@ -64,6 +64,61 @@ h3 {
   --color-success: var(--success);
   --color-info-foreground: var(--info-foreground);
   --color-info: var(--info);
+
+  /* pokemon types */
+  --color-bug-primary: var(--bug-primary);
+  --color-bug-secondary: var(--bug-secondary);
+
+  --color-dark-primary: var(--dark-primary);
+  --color-dark-secondary: var(--dark-secondary);
+
+  --color-dragon-primary: var(--dragon-primary);
+  --color-dragon-secondary: var(--dragon-secondary);
+
+  --color-electric-primary: var(--electric-primary);
+  --color-electric-secondary: var(--electric-secondary);
+
+  --color-fairy-primary: var(--fairy-primary);
+  --color-fairy-secondary: var(--fairy-secondary);
+
+  --color-fighting-primary: var(--fighting-primary);
+  --color-fighting-secondary: var(--fighting-secondary);
+
+  --color-fire-primary: var(--fire-primary);
+  --color-fire-secondary: var(--fire-secondary);
+
+  --color-flying-primary: var(--flying-primary);
+  --color-flying-secondary: var(--flying-secondary);
+
+  --color-ghost-primary: var(--ghost-primary);
+  --color-ghost-secondary: var(--ghost-secondary);
+
+  --color-grass-primary: var(--grass-primary);
+  --color-grass-secondary: var(--grass-secondary);
+
+  --color-ground-primary: var(--ground-primary);
+  --color-ground-secondary: var(--ground-secondary);
+
+  --color-ice-primary: var(--ice-primary);
+  --color-ice-secondary: var(--ice-secondary);
+
+  --color-normal-primary: var(--normal-primary);
+  --color-normal-secondary: var(--normal-secondary);
+
+  --color-poison-primary: var(--poison-primary);
+  --color-poison-secondary: var(--poison-secondary);
+
+  --color-psychic-primary: var(--psychic-primary);
+  --color-psychic-secondary: var(--psychic-secondary);
+
+  --color-rock-primary: var(--rock-primary);
+  --color-rock-secondary: var(--rock-secondary);
+
+  --color-steel-primary: var(--steel-primary);
+  --color-steel-secondary: var(--steel-secondary);
+
+  --color-water-primary: var(--water-primary);
+  --color-water-secondary: var(--water-secondary);
 }
 
 :root {
@@ -106,6 +161,61 @@ h3 {
   --success-foreground: oklch(0.508 0.118 165.612);
   --warning: oklch(0.769 0.188 70.08);
   --warning-foreground: oklch(0.555 0.163 48.998);
+
+  /* pokemon types */
+  --bug-primary: #1b4b28;
+  --bug-secondary: #3b9950;
+
+  --dark-primary: #040706;
+  --dark-secondary: #5a5979;
+
+  --dragon-primary: #448b95;
+  --dragon-secondary: #60cbd9;
+
+  --electric-primary: #e4e22b;
+  --electric-secondary: #fbfb72;
+
+  --fairy-primary: #971944;
+  --fairy-secondary: #ea1369;
+
+  --fighting-primary: #994025;
+  --fighting-secondary: #ec6336;
+
+  --fire-primary: #ac1e23;
+  --fire-secondary: #ff4b5a;
+
+  --flying-primary: #4a677d;
+  --flying-secondary: #93b2c7;
+
+  --ghost-primary: #33336b;
+  --ghost-secondary: #906790;
+
+  --grass-primary: #147b3d;
+  --grass-secondary: #27cb4f;
+
+  --ground-primary: #a9702c;
+  --ground-secondary: #6e491f;
+
+  --ice-primary: #86d2f3;
+  --ice-secondary: #daeefa;
+
+  --normal-primary: #76515b;
+  --normal-secondary: #ca98a7;
+
+  --poison-primary: #5e2d88;
+  --poison-secondary: #9b69d9;
+
+  --psychic-primary: #a42a6c;
+  --psychic-secondary: #f81c91;
+
+  --rock-primary: #48180b;
+  --rock-secondary: #8b3e21;
+
+  --steel-primary: #60746d;
+  --steel-secondary: #42bd94;
+
+  --water-primary: #1552e2;
+  --water-secondary: #86a8fc;
 }
 
 .dark {
@@ -147,6 +257,61 @@ h3 {
   --success-foreground: oklch(0.765 0.177 163.223);
   --warning: oklch(0.769 0.188 70.08);
   --warning-foreground: oklch(0.828 0.189 84.429);
+
+  /* pokemon types */
+  --bug-secondary: #1b4b28;
+  --bug-primary: #3b9950;
+
+  --dark-secondary: #040706;
+  --dark-primary: #5a5979;
+
+  --dragon-secondary: #448b95;
+  --dragon-primary: #60cbd9;
+
+  --electric-secondary: #e4e22b;
+  --electric-primary: #fbfb72;
+
+  --fairy-secondary: #971944;
+  --fairy-primary: #ea1369;
+
+  --fighting-secondary: #994025;
+  --fighting-primary: #ec6336;
+
+  --fire-secondary: #ac1e23;
+  --fire-primary: #ff4b5a;
+
+  --flying-secondary: #4a677d;
+  --flying-primary: #93b2c7;
+
+  --ghost-secondary: #33336b;
+  --ghost-primary: #906790;
+
+  --grass-secondary: #147b3d;
+  --grass-primary: #27cb4f;
+
+  --ground-secondary: #a9702c;
+  --ground-primary: #6e491f;
+
+  --ice-secondary: #86d2f3;
+  --ice-primary: #daeefa;
+
+  --normal-secondary: #76515b;
+  --normal-primary: #ca98a7;
+
+  --poison-secondary: #5e2d88;
+  --poison-primary: #9b69d9;
+
+  --psychic-secondary: #a42a6c;
+  --psychic-primary: #f81c91;
+
+  --rock-secondary: #48180b;
+  --rock-primary: #8b3e21;
+
+  --steel-secondary: #60746d;
+  --steel-primary: #42bd94;
+
+  --water-secondary: #1552e2;
+  --water-primary: #86a8fc;
 }
 
 @layer base {
