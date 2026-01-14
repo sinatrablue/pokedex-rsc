@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState, useTransition, type FC } from "react";
+import { Link } from "react-router";
 import { fetch_moves } from "~/actions";
 import {
   Badge,
@@ -63,7 +64,9 @@ export const MovesTable: FC<MovesTableProps> = ({ moves: _moves }) => {
           | "special";
         const DammageClassIcon = DAMMAGE_CLASSES_ICONS[dammageClass];
         return [
-          move.name,
+          <Link to={`/moves/${move.id}`} className="hover:underline">
+            {move.name}
+          </Link>,
           move.accuracy,
           move.pp,
           move.priority,
@@ -84,7 +87,16 @@ export const MovesTable: FC<MovesTableProps> = ({ moves: _moves }) => {
 
   return (
     <Table>
-      <TableCaption>You can click on each move to see the details</TableCaption>
+      <TableCaption>
+        {isPending ? (
+          <>
+            <Spinner />
+            Fetching moves...
+          </>
+        ) : (
+          "You can click on each move to see the details"
+        )}
+      </TableCaption>
       <TableHeader>
         <TableRow>
           {headers.map((header) => (
@@ -93,30 +105,23 @@ export const MovesTable: FC<MovesTableProps> = ({ moves: _moves }) => {
         </TableRow>
       </TableHeader>
 
-      {isPending ? (
-        <div className="flex items-center gap-4">
-          <Spinner />
-          Fetching moves...
-        </div>
-      ) : (
-        <TableBody>
-          {rows.map((row, rowIndex) => (
-            <TableRow key={`${row[0]}-${row[1]}-${row[2]}`}>
-              {row.map((cell, cellIndex) => (
-                <TableCell
-                  key={`${rowIndex}-${cell}-${cellIndex}`}
-                  className={cn(
-                    "max-w-xs overflow-hidden text-ellipsis whitespace-nowrap",
-                    cellIndex === 6 ? "row-span-3" : "row-span-1",
-                  )}
-                >
-                  {cell}
-                </TableCell>
-              ))}
-            </TableRow>
-          ))}
-        </TableBody>
-      )}
+      <TableBody>
+        {rows.map((row, rowIndex) => (
+          <TableRow key={`${row[0]}-${row[1]}-${row[2]}`}>
+            {row.map((cell, cellIndex) => (
+              <TableCell
+                key={`${rowIndex}-${cell}-${cellIndex}`}
+                className={cn(
+                  "max-w-xs overflow-hidden text-ellipsis whitespace-nowrap",
+                  cellIndex === 6 ? "row-span-3" : "row-span-1",
+                )}
+              >
+                {cell}
+              </TableCell>
+            ))}
+          </TableRow>
+        ))}
+      </TableBody>
     </Table>
   );
 };

@@ -27,7 +27,7 @@ export const MainInfosCard: FC<MainInfosCardProps> = ({ pokemon }) => {
               <Badge
                 key={type.slot}
                 variant={type.type.name as TypeLiteral}
-                className="rounded-2xl border-2 px-6 py-2 text-3xl"
+                className="rounded-2xl border-2 px-4 py-1 text-3xl"
               >
                 {type.type.name}
               </Badge>

@@ -2,7 +2,7 @@
 import { Tv } from "lucide-react";
 import { useEffect, useState, type FC } from "react";
 import { fetchAbility } from "~/actions";
-import { SeeOtherPokemonsModal } from "~/components/pokemon_details";
+import { SeeOtherPokemonsModal } from "~/components";
 import { Badge } from "~/components/ui";
 import { formatGeneration } from "~/lib/utils";
 import type { AbilityQuery } from "~/types";
@@ -29,7 +29,8 @@ export const AbilityDetails: FC<AbilityDetailsProps> = ({ url }) => {
         </div>
         {ability && ability.pokemon.length > 0 && (
           <SeeOtherPokemonsModal
-            abilityName={ability.name}
+            description={`Those pokemons can also have ${ability.name} as their ability`}
+            triggerText="See other pokemons learning it"
             pokemons={ability.pokemon}
           />
         )}

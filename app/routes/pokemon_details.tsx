@@ -5,7 +5,7 @@ import type { PokemonQuery } from "~/types";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "Details - Pokédex-RSC" },
+    { title: "Pokemon details - Pokédex-RSC" },
     { name: "description", content: "Welcome to React Router!" },
   ];
 }

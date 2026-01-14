@@ -4,4 +4,3 @@ export * from "./DetailsTabs";
 export * from "./MainInfosCard";
 export * from "./ModalScrollAreaListEntry";
 export * from "./MovesTable";
-export * from "./SeeOtherPokemonsModal";

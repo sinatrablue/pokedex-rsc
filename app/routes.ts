@@ -6,7 +6,7 @@ export default [
     file: "routes/home.tsx",
   },
   {
-    file: "layouts/PageLayout.tsx",
+    file: "layouts/pokemon_details.layout.tsx",
     path: "/pokemons",
     children: [
       {
@@ -16,6 +16,16 @@ export default [
       {
         path: "/pokemons/:pokemonId",
         file: "routes/pokemon_details.tsx",
+      },
+    ],
+  },
+  {
+    file: "layouts/move_details.layout.tsx",
+    path: "/moves",
+    children: [
+      {
+        path: "/moves/:moveId",
+        file: "routes/move_details.tsx",
       },
     ],
   },

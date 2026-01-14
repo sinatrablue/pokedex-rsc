@@ -1,3 +1,4 @@
+"use client";
 import { LucideSquareArrowOutUpRight } from "lucide-react";
 import { ListEntry } from "~/components/pokemon_details";
 import {
@@ -15,19 +16,21 @@ import {
 import type { PokemonsRelated } from "~/types";
 
 interface SeeOtherPokemonsModalProps {
-  abilityName: string;
+  triggerText: string;
+  description: string;
   pokemons: PokemonsRelated;
 }
 
 export const SeeOtherPokemonsModal: React.FC<SeeOtherPokemonsModalProps> = ({
-  abilityName,
+  triggerText,
+  description,
   pokemons,
 }) => {
   return (
     <Dialog>
       <DialogTrigger>
         <Button variant="secondary" className="w-fit">
-          See other pokemons learning it
+          {triggerText}
           <LucideSquareArrowOutUpRight />
         </Button>
       </DialogTrigger>
@@ -35,9 +38,7 @@ export const SeeOtherPokemonsModal: React.FC<SeeOtherPokemonsModalProps> = ({
       <DialogPopup>
         <DialogHeader>
           <DialogTitle>Other pokemons</DialogTitle>
-          <DialogDescription>
-            Those pokemons can also have {abilityName} as their ability
-          </DialogDescription>
+          <DialogDescription>{description}</DialogDescription>
         </DialogHeader>
 
         <ScrollArea className="flex max-h-80 flex-col gap-3 p-2">
